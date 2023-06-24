@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="addIncomeAndExpenses.js" ></script>
+    <link rel="stylesheet" href="../index.css" />
+</head>
+<body>
+        <p id="errorMessage">Error message displayed</p>
+        <form id="sourceForm">
+            <h1>Income Submission Form</h1>
+            <input type="email" placeholder="Enter email" id="incemail"/>
+            <input type="text" placeholder="Enter Source" id="incsource"/>
+            <input type="number" placeholder="Enter Amount" id="incamount"/>
+            <input type="button" value="Submit Income" onClick="addIncome()" />
+        </form>
+        <hr />
+        <form id="expenseForm">
+            <h1>Expense Submission Form</h1>
+            <input type="email" placeholder="Enter email" id="expemail"/>
+            <input type="text" placeholder="Paid for" id="exppaidfor"/>
+            <input type="number" placeholder="Enter Amount" id="expamount"/>
+            <input type="button" value="Submit Expense" onClick="addExpense()" />
+        </form>
+    <hr />
+    <form id="expensesList">
+        <h1>Income and Expenses list</h1>
+        <div style="display:flex;flex-direction: row;" >
+            <input type="button" value="Fetch Expenses" id="showExpensebtn" onClick="fetchExpenses()" />
+            <input type="button" onClick="hideExpenses()" id="hideExpensesbtn" value="Hide Expenses" />
+        </div>
+        <table id="fetchedExpenses"></table>
+        <div style="display:flex;flex-direction: row;" >
+            <input type="button" value="Fetch Income" onClick="fetchIncome()" />
+            <input type="button" onClick="hideIncome()" id="hideIncomebtn" value="Hide Income" />
+        </div>
+        <table id="fetchedIncome"></table>
+
+    </form>
+    
+    <hr />
+    <form id="deleteExpenseForm">
+        <h1>Delete Expense or Income Entry</h1>
+        <input type="text" placeHolder="Enter Unique Id of Expense or Income" id="deluid">
+        <input type="button" value="Delete" onClick="deleteItem()" />
+        <h3 id="deleteMessage"></h3>
+    </form>
+    <hr />
+    <form id="alltransactionsform">
+        <h1>All Transactions</h1>
+        <div style="display:flex;flex-direction: row;" >
+            <input type="button" value="Fetch All Transactions" onClick="sortbyDate()" />
+            <input type="button" value="Hide All Transactions" onClick="hideAllTranasactions()" />
+        </div>
+        <table id="alltransactions"></table>
+    </form>
+    <hr />
+    <form id="userTransactionslist">
+        <h1>Transactions of a user</h1>
+        <input type="email" placeHolder="Enter email" id="useremail">
+        <p id="results"></p>
+        <div style="display:flex;flex-direction: row;" >
+            <input type="button" value="Fetch Transactions" onClick="fetchUserTransactions()" />
+            <input type="button" value="Hide Transactions" onClick="hideUserTransactions()" />
+        </div>
+        <table id="filteredTransactions"></table>
+    </form>
+</body>
+</html>

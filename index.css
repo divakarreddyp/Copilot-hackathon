@@ -1,0 +1,59 @@
+#sourceForm,#expenseForm,#editExpenseForm,#expensesList,#deleteExpenseForm,#alltransactionsform,#userTransactionslist{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+}
+#sourceForm input,#expenseForm input,#editExpenseForm input,input ,button{
+    margin:10px;
+    width:300px;
+    height:30px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    padding:0px 5px;
+}
+#editExpenseForm{
+    flex-direction: row;
+}
+#additionforms{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    
+}
+
+table{
+    width:80%;
+    text-align:center;
+}
+table,th,td{
+    border:1px solid #ccc;
+    border-collapse:collapse;
+}
+th,td,tr{
+    padding:5px;
+}
+#errorMessage{
+    color:red;
+    font-size:20px;
+    font-weight:bold;
+    position:fixed;
+    top:10px;
+    right:50px;
+    z-index: 1000;
+    opacity:0;
+    animation:showError 2s ease-in-out forwards;
+}
+@keyframes showError{
+    0%{
+        opacity:1;
+    }
+    70%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+    
+}
